@@ -76,6 +76,15 @@ void Yhteystietokirja::tulosta()
 		tiedot[i]->tulosta();
 	}
 
+	cout << "Inventaario: " << endl;
+
+	// Kydn lpi kaikki tuotteet
+
+	for (int i = 0; i < koko; i++)
+	{
+		tiedot[i]->tulosta();
+	}
+
 }
 
 void Yhteystietokirja::tallennaTiedostoon()
