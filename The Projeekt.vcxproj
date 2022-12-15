@@ -19,15 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Osoite.h" />
-    <ClInclude Include="PuhelinNumero.h" />
-    <ClInclude Include="Sposti.h" />
+    <ClInclude Include="Kaveri.h" />
+    <ClInclude Include="Kollega.h" />
+    <ClInclude Include="Yhteystiedot.h" />
     <ClInclude Include="Yhteystietokirja.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Osoite.cpp" />
-    <ClCompile Include="PuhelinNumero.cpp" />
-    <ClCompile Include="Sposti.cpp" />
+    <ClCompile Include="Kaveri.cpp" />
+    <ClCompile Include="Kollega.cpp" />
+    <ClCompile Include="Yhteystiedot.cpp" />
     <ClCompile Include="Yhteystietokirja.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
