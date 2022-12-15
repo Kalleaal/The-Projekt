@@ -27,6 +27,7 @@
   <ItemGroup>
     <ClCompile Include="Kaveri.cpp" />
     <ClCompile Include="Kollega.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Yhteystiedot.cpp" />
     <ClCompile Include="Yhteystietokirja.cpp" />
   </ItemGroup>

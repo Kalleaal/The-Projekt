@@ -11,21 +11,22 @@ using namespace std;
 class Yhteystietokirja
 {
 public:
-
-	void menu();
-	void lisaaYhteystieto();
-	virtual void tulosta();
-	void tallennaTiedostoon();
-	void tyhjennys();
-	void lueTiedosto();
-	//void etsi();		// Laajennus mahdollisuus.
-
 	enum YhteystietoTyypit
 	{
 		Kaveri,
 		Kollega,
 		Muut
 	};
+
+	Yhteystietokirja(string tiedosto);
+	void menu();
+	void lisaaYhteystieto(YhteystietoTyypit tyyppi);
+	virtual void tulosta();
+	void tallennaTiedostoon();
+	void tyhjennys();
+	void lueTiedosto();
+	//void etsi();		// Laajennus mahdollisuus.
+
 
 protected:
 	vector<Yhteystiedot*>tiedot;

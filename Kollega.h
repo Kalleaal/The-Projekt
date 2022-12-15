@@ -1,5 +1,5 @@
 #pragma once
-#include"Yhteystiedot.h"
+#include"Yhteystietokirja.h"
 class Kollega:Yhteystiedot
 {
 public:

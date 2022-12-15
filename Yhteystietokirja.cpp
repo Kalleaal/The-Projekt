@@ -8,7 +8,7 @@ using namespace std;
 
 Yhteystietokirja::Yhteystietokirja(string tiedosto)
 {
-	string tiedosonNimi = "ostoslista.txt";
+	string tiedostonNimi = "yhteystiedot.txt";
 	lueTiedosto();
 }
 
@@ -34,10 +34,10 @@ void Yhteystietokirja::menu()
 			lisaaYhteystieto(Muut);
 			break;
 		case 3:
-			lisaaYhteystieto(Kaveri)
+			lisaaYhteystieto(Kaveri);
 			break;
 		case 4:
-			lisaaYhteystieto(Kollega)
+			lisaaYhteystieto(Kollega);
 			break;
 		case 5:
 			tyhjennys;
@@ -58,7 +58,7 @@ void Yhteystietokirja::menu()
 
 }
 
-void Yhteystietokirja::lisaaYhteystieto()
+void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 {
 
 }
@@ -67,18 +67,7 @@ void Yhteystietokirja::tulosta()
 {
 	int koko = tiedot.size();
 
-	cout << "Inventaario: " << endl;
-
-	// Kydn lpi kaikki tuotteet
-
-	for (int i = 0; i < koko; i++)
-	{
-		tiedot[i]->tulosta();
-	}
-
-	cout << "Inventaario: " << endl;
-
-	// Kydn lpi kaikki tuotteet
+	cout << "Yhteystiedot " << endl;
 
 	for (int i = 0; i < koko; i++)
 	{
@@ -90,31 +79,30 @@ void Yhteystietokirja::tulosta()
 void Yhteystietokirja::tallennaTiedostoon()
 {
 	
-	ofstream myFile(Lista, fstream);
+	ofstream myFile("yhteystiedot.txt");
 	if (myFile)
 	{
-		for (int i = 0; i < tiedot.size(); i++)
-		{
-			myFile << tiedot[i]->haeNimi() << endl;
-			myFile << tiedot[i]->haeKpl() << endl;
-		}
-	}    myFile.close();
+		
+		myFile << tulosta ;
+		
+		
+	}myFile.close();
 }
 
 void Yhteystietokirja::tyhjennys()
 {
 	// trunc-moodi avaa tiedoston ja tuhoaa sislln
-	ofstream myFile(tiedostonNimi, ofstream::trunc);
+	ofstream myFile("yhteystiedot.txt", ofstream::trunc);
 	myFile.close();
 	// Vektorin tyhjennys
-	Yhteystiedot.clear();
+	Yhteystiedot&clear();
 }
 
-void Yhteystietokirja::lisaaYhteystieto()
+void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 {
 	string nimi;
 	string osoite;
-	string pnumero;
+	float pnumero;
 
 	//Kysytn uuden tuotteen tiedot
 	cout << "Anna uuden yhteystiedon nimi, osoite ja puhelinnumero  " << endl;
@@ -122,11 +110,11 @@ void Yhteystietokirja::lisaaYhteystieto()
 	cin >> nimi;
 	cout << "Osoite: ";
 	cin >> osoite;
-	cout << "Puhelinnumero:"
+	cout << "Puhelinnumero:";
 	cin >> pnumero;
 
-	Yhteystiedot* tiedot = new tiedot(nimi, osoite, pnumero);
-	yhteystiedot.push_back(tiedot);
+	Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, pnumero);
+	tiedot.push_back(tiedotz);
 }
 
 void Yhteystietokirja::lueTiedosto()
@@ -139,7 +127,7 @@ void Yhteystietokirja::lueTiedosto()
 
 
 	ifstream myFile;
-	myFile.open(tiedostonNimi);
+	myFile.open("yhteystiedot.txt");
 	if (myFile)
 	{
 		while (myFile.peek() != EOF)
@@ -151,8 +139,8 @@ void Yhteystietokirja::lueTiedosto()
 			getline(myFile, pnumero);
 			getline(myFile, steamId);
 			getline(myFile, tnumero);
-		Yhteystiedot* tiedot = new Yhteystiedot(nimi, osoite, atoi(pnumero.c_str()));
-			tiedot.push_back(tiedot);
+		Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, atoi(pnumero.c_str()));
+			tiedot.push_back(tiedotz);
 		}
 		myFile.close();
 	}
