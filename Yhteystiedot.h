@@ -10,9 +10,11 @@ class Yhteystiedot
 	
 	virtual void tulosta();
 
-	protected:
 	string nimi;
 	string osoite;
 	float pnumero;
+
+protected:
+
 };
 

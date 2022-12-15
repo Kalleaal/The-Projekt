@@ -1,5 +1,7 @@
 #pragma once
-#include "Yhteystietokirja.h"
+#include "Yhteystiedot.h"
+
+
 class Kaveri:Yhteystiedot
 {
 public:

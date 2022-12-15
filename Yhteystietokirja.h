@@ -3,8 +3,6 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include "Yhteystiedot.h"
-
 using namespace std;
 
 

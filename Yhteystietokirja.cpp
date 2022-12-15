@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
+#include "Yhteystiedot.h"
 using namespace std;
 
 Yhteystietokirja::Yhteystietokirja(string tiedosto)
@@ -40,10 +40,10 @@ void Yhteystietokirja::menu()
 			lisaaYhteystieto(Kollega);
 			break;
 		case 5:
-			tyhjennys;
+			tyhjennys();
 			break;
 		case 0:
-			tallennaTiedostoon;
+			tallennaTiedostoon();
 		}
 
 		if (valinta != 0)
@@ -139,7 +139,7 @@ void Yhteystietokirja::lueTiedosto()
 			getline(myFile, pnumero);
 			getline(myFile, steamId);
 			getline(myFile, tnumero);
-		Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, atoi(pnumero.c_str()));
+			Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, atoi(pnumero.c_str()));
 			tiedot.push_back(tiedotz);
 		}
 		myFile.close();
