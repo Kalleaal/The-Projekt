@@ -15,30 +15,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Osoite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PuhelinNumero.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Sposti.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Yhteystietokirja.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Yhteystiedot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Kaveri.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Kollega.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Osoite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PuhelinNumero.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sposti.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Yhteystietokirja.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Yhteystiedot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Kollega.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Kaveri.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

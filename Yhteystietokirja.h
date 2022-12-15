@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include "Yhteystiedot.h"
 
 using namespace std;
 
@@ -13,16 +14,21 @@ public:
 
 	void menu();
 	void lisaaYhteystieto();
-	virtual void print();
+	virtual void tulosta();
 	void tallennaTiedostoon();
-	void tyhjenn();
-	void UusiOstos();
+	void tyhjennys();
 	void lueTiedosto();
 	//void etsi();		// Laajennus mahdollisuus.
 
+	enum YhteystietoTyypit
+	{
+		Kaveri,
+		Kollega,
+		Muut
+	};
 
 protected:
-	vector<Yhteystietokirja*>Yhteystiedot;
+	vector<Yhteystiedot*>tiedot;
 
 };
 
