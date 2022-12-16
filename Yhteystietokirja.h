@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include "Yhteystiedot.h"
 using namespace std;
 
 
@@ -11,9 +12,9 @@ class Yhteystietokirja
 public:
 	enum YhteystietoTyypit
 	{
-		Kaveri,
-		Kollega,
-		Muut
+		Kaveri1,
+		Kollega1,
+		Muut1
 	};
 
 	Yhteystietokirja(string tiedosto);
@@ -27,7 +28,7 @@ public:
 
 
 protected:
-	vector<Yhteystiedot*>tiedot;
-	string tiedostonNimi = "yhteystiedot.txt";
+	std::vector<Yhteystiedot*>tiedot;
+	std::string tiedostonNimi = "yhteystiedot.txt";
 };
 

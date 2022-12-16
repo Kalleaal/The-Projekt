@@ -8,7 +8,7 @@ using namespace std;
 
 Yhteystietokirja::Yhteystietokirja(string tiedosto)
 {
-	string tiedostonNimi = "yhteystiedot.txt";
+	tiedostonNimi = tiedosto;
 	lueTiedosto();
 }
 
@@ -28,16 +28,16 @@ void Yhteystietokirja::menu()
 		switch (valinta)
 		{
 		case 1:
-			tulosta;
+			tulosta();
 			break;
 		case 2:
-			lisaaYhteystieto(Muut);
+			lisaaYhteystieto(Muut1);
 			break;
 		case 3:
-			lisaaYhteystieto(Kaveri);
+			lisaaYhteystieto(Kaveri1);
 			break;
 		case 4:
-			lisaaYhteystieto(Kollega);
+			lisaaYhteystieto(Kollega1);
 			break;
 		case 5:
 			tyhjennys();
@@ -79,7 +79,7 @@ void Yhteystietokirja::tallennaTiedostoon()
 	if (myFile)
 	{
 		
-		myFile << tulosta;
+		/*myFile tulosta();*/
 		
 		
 	}myFile.close();
@@ -109,8 +109,12 @@ void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 	cout << "Puhelinnumero:";
 	cin >> pnumero;
 
+
+
+
 	Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, pnumero);
 	tiedot.push_back(tiedotz);
+	tallennaTiedostoon(uuskaveriolio)
 }
 
 void Yhteystietokirja::lueTiedosto()

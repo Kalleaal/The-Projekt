@@ -13,8 +13,8 @@ int main()
 	SetConsoleCP(1252);
 	SetConsoleOutputCP(1252);
 
-	Yhteystietokirja
-	menu();
+	Yhteystietokirja ytk{ "yhteystiedot.txt" };
+	ytk.menu();
 
 
 

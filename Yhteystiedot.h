@@ -1,6 +1,6 @@
 #pragma once
-#include "Yhteystietokirja.h"
-
+#include <iostream>
+using namespace std;
 
 class Yhteystiedot
 {
