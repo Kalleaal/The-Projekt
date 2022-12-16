@@ -76,12 +76,16 @@ void Yhteystietokirja::tulosta()
 
 void Yhteystietokirja::tallennaKaveriTiedostoon(Kaveri* ka)
 {
-	ofstream myFile(tiedostonNimi);
+	ofstream myFile(tiedostonNimi,std::ios::app);
 	
 	if (myFile)
 	{
-		myFile << ka->nimi << "\n" << ka->osoite << "\n" << ka->pnumero << "\n" << ka->nickname << "\n" << ka->discordId;
-
+	/*	myFile << ka->nimi << "\n" << ka->osoite << "\n" << ka->pnumero << "\n" << ka->nickname << "\n" << ka->discordId << endl << endl;*/
+		myFile << "Nimi:			" << ka->nimi << endl;
+		myFile << "Osoite			" << ka->osoite << endl;
+		myFile << "Pnumero			" << ka->pnumero << endl;
+		myFile << "Nickname:		" << ka->nickname << endl;
+		myFile << "Discord ID		" << ka->discordId << endl << endl;
 
 	}myFile.close();
 
@@ -89,12 +93,15 @@ void Yhteystietokirja::tallennaKaveriTiedostoon(Kaveri* ka)
 
 void Yhteystietokirja::tallennaKollegaTiedostoon(Kollega* k)
 {
-	ofstream myFile(tiedostonNimi);
+	ofstream myFile(tiedostonNimi, std::ios::app);
 
 	if (myFile)
 	{
-		myFile << k->nimi << "\n" << k->osoite << "\n" << k->pnumero << "\n" << k->tnumero ;
-
+		/*myFile << k->nimi << "\n" << k->osoite << "\n" << k->pnumero << "\n" << k->tnumero << endl << endl;*/
+		myFile << "Nimi:			" << k->nimi << endl;
+		myFile << "Osoite			" << k->osoite << endl;
+		myFile << "Pnumero			" << k->pnumero << endl;
+		myFile << "Tyonumero		" << k->tnumero << endl << endl;
 
 	}myFile.close();
 
@@ -102,12 +109,15 @@ void Yhteystietokirja::tallennaKollegaTiedostoon(Kollega* k)
 
 void Yhteystietokirja::tallennaMuuTiedostoon(Yhteystiedot* y)
 {
-	ofstream myFile(tiedostonNimi);
+	ofstream myFile(tiedostonNimi, std::ios::app);
 
 	if (myFile)
 	{
-		myFile << y->nimi << "\n" << y->osoite << "\n" << y->pnumero;
-
+		/*myFile << y->nimi << "\n" << y->osoite << "\n" << y->pnumero << endl << endl;*/
+		
+		myFile << "Nimi:			" << y->nimi << endl;
+		myFile << "Osoite			" << y->osoite << endl;
+		myFile << "Pnumero			" << y->pnumero << endl << endl;
 
 	}myFile.close();
 
@@ -115,36 +125,37 @@ void Yhteystietokirja::tallennaMuuTiedostoon(Yhteystiedot* y)
 
 void Yhteystietokirja::tyhjennys()
 {
-	// trunc-moodi avaa tiedoston ja tuhoaa sislln
-	ofstream myFile(tiedostonNimi, ofstream::trunc);
-	myFile.close();
-	// Vektorin tyhjennys
-	/*Yhteystiedot&clear();*/
+	
+	ofstream myFile(tiedostonNimi);
+	myFile << "";
+	tiedot.clear();
+	
 }
 
 void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 {
 	string nimi;
 	string osoite;
-	float pnumero;
+	double pnumero;
 
-	//Kysytn uuden tuotteen tiedot
+	
 	cout << "Anna uuden yhteystiedon nimi, osoite ja puhelinnumero  " << endl;
 	cout << "Nimi: ";
 	cin >> nimi;
 	cout << "Osoite: ";
-	cin >> osoite;
+	cin.ignore();
+	getline (cin,osoite);
 	cout << "Puhelinnumero:";
 	cin >> pnumero;
-
+	cin.ignore();
 
 
 	if (tyyppi == Kollega1)
 	{
 
-		float tnumero;
-
-		cout << "Työpuhelinnumero ";
+		double tnumero;
+		
+		cout << "Tyopuhelinnumero ";
 		cin >> tnumero;
 
 		// Uusi olio
@@ -156,6 +167,7 @@ void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 	}
 	else if (tyyppi == Kaveri1)
 	{
+		
 		string nickname;
 		int discordId;
 
@@ -206,7 +218,7 @@ void Yhteystietokirja::lueTiedosto()
 			getline(myFile, pnumero);
 			getline(myFile, steamId);
 			getline(myFile, tnumero);
-			Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, atoi(pnumero.c_str()));
+			Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, atof(pnumero.c_str()));
 			tiedot.push_back(tiedotz);
 		}
 		myFile.close();

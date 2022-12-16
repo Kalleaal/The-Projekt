@@ -1,5 +1,9 @@
-dhdh
-dfhgdfh
-5465
-dfhdfh
-4557
+Nimi:			Roope
+Osoite			Lohtaja 666
+Pnumero			4e+10
+Tyonumero		4.57449e+10
+
+Nimi:			Roope
+Osoite			kuja
+Pnumero			1.23457e+07
+

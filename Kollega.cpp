@@ -2,7 +2,7 @@
 
 
 
-Kollega::Kollega(string n, string o, float p, float t) : Yhteystiedot(n, o, p) 
+Kollega::Kollega(string n, string o, double p, double t) : Yhteystiedot(n, o, p) 
 {
 	tnumero = t;
 };
@@ -10,8 +10,8 @@ Kollega::Kollega(string n, string o, float p, float t) : Yhteystiedot(n, o, p)
 
 void Kollega::tulosta()
 {
-	//cout << "Nimi:     " << nimi << endl;
-	//cout << "Osoite:    " << osoite << endl;
-	//cout << "Pnumero:   " << pnumero << endl;
-	cout << "Tyonumero:     " << tnumero << endl;
+	cout << "Nimi:     " << nimi << endl;
+	cout << "Osoite:    " << osoite << endl;
+	cout << "Pnumero:   " << pnumero << endl;
+	cout << "Tyonumero:     " << tnumero << endl <<endl;
 }

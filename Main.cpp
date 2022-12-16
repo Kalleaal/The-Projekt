@@ -10,8 +10,8 @@ using namespace std;
 
 int main()
 {
-	SetConsoleCP(1252);
-	SetConsoleOutputCP(1252);
+	SetConsoleCP(2504);
+	SetConsoleOutputCP(2504);
 
 	Yhteystietokirja ytk{ "yhteystiedot.txt" };
 	ytk.menu();
