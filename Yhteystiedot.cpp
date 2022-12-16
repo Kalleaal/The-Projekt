@@ -4,8 +4,11 @@
 
 
 
-Yhteystiedot::Yhteystiedot(string n, string o, float p)
+Yhteystiedot::Yhteystiedot(string n, string o, float p )
 {
+	nimi = n;
+	osoite = o;
+	pnumero = p;
 
 }
 

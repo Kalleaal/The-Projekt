@@ -2,7 +2,10 @@
 
 
 
-Kollega::Kollega(string n, string o, float p, float t) : Yhteystiedot(n, o, p) {};
+Kollega::Kollega(string n, string o, float p, float t) : Yhteystiedot(n, o, p) 
+{
+	tnumero = t;
+};
 
 
 void Kollega::tulosta()

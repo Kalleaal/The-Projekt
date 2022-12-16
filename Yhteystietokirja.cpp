@@ -30,7 +30,7 @@ void Yhteystietokirja::menu()
 		switch (valinta)
 		{
 		case 1:
-			tulosta();
+			lueTiedosto();
 			break;
 		case 2:
 			lisaaYhteystieto(Muut1);
@@ -45,7 +45,7 @@ void Yhteystietokirja::menu()
 			tyhjennys();
 			break;
 		case 0:
-			tallennaTiedostoon();
+			break;
 		}
 
 		if (valinta != 0)
@@ -74,17 +74,43 @@ void Yhteystietokirja::tulosta()
 
 }
 
-void Yhteystietokirja::tallennaTiedostoon()
+void Yhteystietokirja::tallennaKaveriTiedostoon(Kaveri* ka)
 {
-	
 	ofstream myFile(tiedostonNimi);
+	
 	if (myFile)
 	{
-		
-		/*myFile tulosta();*/
-		
-		
+		myFile << ka->nimi << "\n" << ka->osoite << "\n" << ka->pnumero << "\n" << ka->nickname << "\n" << ka->discordId;
+
+
 	}myFile.close();
+
+}
+
+void Yhteystietokirja::tallennaKollegaTiedostoon(Kollega* k)
+{
+	ofstream myFile(tiedostonNimi);
+
+	if (myFile)
+	{
+		myFile << k->nimi << "\n" << k->osoite << "\n" << k->pnumero << "\n" << k->tnumero ;
+
+
+	}myFile.close();
+
+}
+
+void Yhteystietokirja::tallennaMuuTiedostoon(Yhteystiedot* y)
+{
+	ofstream myFile(tiedostonNimi);
+
+	if (myFile)
+	{
+		myFile << y->nimi << "\n" << y->osoite << "\n" << y->pnumero;
+
+
+	}myFile.close();
+
 }
 
 void Yhteystietokirja::tyhjennys()
@@ -93,7 +119,7 @@ void Yhteystietokirja::tyhjennys()
 	ofstream myFile(tiedostonNimi, ofstream::trunc);
 	myFile.close();
 	// Vektorin tyhjennys
-	Yhteystiedot&clear();
+	/*Yhteystiedot&clear();*/
 }
 
 void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
@@ -125,6 +151,8 @@ void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 		Kollega* Kollega1 = new Kollega(nimi, osoite, pnumero, tnumero);
 		// Listn vektoriin
 		tiedot.push_back(Kollega1);
+
+		tallennaKollegaTiedostoon(Kollega1);
 	}
 	else if (tyyppi == Kaveri1)
 	{
@@ -143,12 +171,16 @@ void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 		Kaveri* kaveri1 = new Kaveri(nimi, osoite, pnumero, nickname, discordId);
 		// Listn vektoriin
 		tiedot.push_back(kaveri1);
+		tallennaKaveriTiedostoon(kaveri1);
 	}
 	else if (tyyppi == Muut1)
 	{
 		Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, pnumero);
 		tiedot.push_back(tiedotz);
+		tallennaMuuTiedostoon(tiedotz);
 	}
+
+
 
 }
 
@@ -178,6 +210,7 @@ void Yhteystietokirja::lueTiedosto()
 			tiedot.push_back(tiedotz);
 		}
 		myFile.close();
+		tulosta();
 	}
 	else
 	{

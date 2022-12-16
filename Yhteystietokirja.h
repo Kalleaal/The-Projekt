@@ -4,6 +4,8 @@
 #include <string>
 #include <fstream>
 #include "Yhteystiedot.h"
+#include "Kaveri.h"
+#include "Kollega.h"
 using namespace std;
 
 
@@ -21,7 +23,9 @@ public:
 	void menu();
 	void lisaaYhteystieto(YhteystietoTyypit tyyppi);
 	virtual void tulosta();
-	void tallennaTiedostoon();
+	void tallennaKaveriTiedostoon(Kaveri* ka);
+	void tallennaKollegaTiedostoon(Kollega* k);
+	void tallennaMuuTiedostoon(Yhteystiedot* y);
 	void tyhjennys();
 	void lueTiedosto();
 	//void etsi();		// Laajennus mahdollisuus.
@@ -29,6 +33,8 @@ public:
 
 protected:
 	std::vector<Yhteystiedot*>tiedot;
+
+
 	std::string tiedostonNimi = "yhteystiedot.txt";
 };
 
