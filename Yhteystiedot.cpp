@@ -4,7 +4,7 @@
 
 
 
-Yhteystiedot::Yhteystiedot(string n, string o, double p )
+Yhteystiedot::Yhteystiedot(string n, string o, long p )
 {
 	nimi = n;
 	osoite = o;

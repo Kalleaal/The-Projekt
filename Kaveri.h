@@ -5,7 +5,7 @@
 class Kaveri:public Yhteystiedot
 {
 public:
-	Kaveri(string n, string o, double p, string k, int d);
+	Kaveri(string n, string o, long p, string k, int d);
 	void tulosta() override;
 
 

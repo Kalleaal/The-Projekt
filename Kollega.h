@@ -4,9 +4,9 @@
 class Kollega:public Yhteystiedot
 {
 public:
-	Kollega(string n, string o, double p, double t);
+	Kollega(string n, string o, long p, long t);
 	void tulosta() override;
-	double tnumero;
+	long tnumero;
 protected:
 	
 

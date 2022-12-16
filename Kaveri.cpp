@@ -1,6 +1,6 @@
 #include "Kaveri.h"
 
-Kaveri::Kaveri(string n, string o, double p, string k, int d) 
+Kaveri::Kaveri(string n, string o, long p, string k, int d) 
 : Yhteystiedot(n, o, p) 
 {
 	nickname = k;

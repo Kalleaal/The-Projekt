@@ -6,12 +6,12 @@ class Yhteystiedot
 {
 	public:
 	
-	Yhteystiedot(string n, string o, double p);
+	Yhteystiedot(string n, string o, long p);
 	virtual void tulosta();
 
 	string nimi;
 	string osoite;
-	double pnumero;
+	long pnumero;
 
 protected:
 

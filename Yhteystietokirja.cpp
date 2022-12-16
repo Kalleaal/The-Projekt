@@ -136,7 +136,7 @@ void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 {
 	string nimi;
 	string osoite;
-	double pnumero;
+	long pnumero;
 
 	
 	cout << "Anna uuden yhteystiedon nimi, osoite ja puhelinnumero  " << endl;
@@ -153,7 +153,7 @@ void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 	if (tyyppi == Kollega1)
 	{
 
-		double tnumero;
+		long tnumero;
 		
 		cout << "Tyopuhelinnumero ";
 		cin >> tnumero;
