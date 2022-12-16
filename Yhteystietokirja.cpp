@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include "Yhteystiedot.h"
+#include "Kaveri.h"
+#include "Kollega.h"
 using namespace std;
 
 Yhteystietokirja::Yhteystietokirja(string tiedosto)
@@ -111,10 +113,43 @@ void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
 
 
 
+	if (tyyppi == Kollega1)
+	{
 
-	Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, pnumero);
-	tiedot.push_back(tiedotz);
-	tallennaTiedostoon(uuskaveriolio)
+		float tnumero;
+
+		cout << "Työpuhelinnumero ";
+		cin >> tnumero;
+
+		// Uusi olio
+		Kollega* Kollega1 = new Kollega(nimi, osoite, pnumero, tnumero);
+		// Listn vektoriin
+		tiedot.push_back(Kollega1);
+	}
+	else if (tyyppi == Kaveri1)
+	{
+		string nickname;
+		int discordId;
+
+
+		cout << "Anna kaverin nickname:" << endl;
+		cin >> nickname;
+		cout << "ja Discord id: " << endl;
+		cin >> discordId;
+
+
+
+		// Uusi UrheiluV olio
+		Kaveri* kaveri1 = new Kaveri(nimi, osoite, pnumero, nickname, discordId);
+		// Listn vektoriin
+		tiedot.push_back(kaveri1);
+	}
+	else if (tyyppi == Muut1)
+	{
+		Yhteystiedot* tiedotz = new Yhteystiedot(nimi, osoite, pnumero);
+		tiedot.push_back(tiedotz);
+	}
+
 }
 
 void Yhteystietokirja::lueTiedosto()
