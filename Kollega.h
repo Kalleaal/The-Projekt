@@ -1,7 +1,7 @@
 #pragma once
 #include"Yhteystiedot.h"
 
-class Kollega:Yhteystiedot
+class Kollega:public Yhteystiedot
 {
 public:
 	Kollega(string n, string o, float p, float t);

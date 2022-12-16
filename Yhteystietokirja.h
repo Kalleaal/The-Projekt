@@ -28,6 +28,6 @@ public:
 
 protected:
 	vector<Yhteystiedot*>tiedot;
-
+	string tiedostonNimi = "yhteystiedot.txt";
 };
 

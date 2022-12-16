@@ -58,10 +58,6 @@ void Yhteystietokirja::menu()
 
 }
 
-void Yhteystietokirja::lisaaYhteystieto(YhteystietoTyypit tyyppi)
-{
-
-}
 
 void Yhteystietokirja::tulosta()
 {
@@ -79,11 +75,11 @@ void Yhteystietokirja::tulosta()
 void Yhteystietokirja::tallennaTiedostoon()
 {
 	
-	ofstream myFile("yhteystiedot.txt");
+	ofstream myFile(tiedostonNimi);
 	if (myFile)
 	{
 		
-		myFile << tulosta ;
+		myFile << tulosta;
 		
 		
 	}myFile.close();
@@ -92,7 +88,7 @@ void Yhteystietokirja::tallennaTiedostoon()
 void Yhteystietokirja::tyhjennys()
 {
 	// trunc-moodi avaa tiedoston ja tuhoaa sislln
-	ofstream myFile("yhteystiedot.txt", ofstream::trunc);
+	ofstream myFile(tiedostonNimi, ofstream::trunc);
 	myFile.close();
 	// Vektorin tyhjennys
 	Yhteystiedot&clear();
@@ -127,7 +123,7 @@ void Yhteystietokirja::lueTiedosto()
 
 
 	ifstream myFile;
-	myFile.open("yhteystiedot.txt");
+	myFile.open(tiedostonNimi);
 	if (myFile)
 	{
 		while (myFile.peek() != EOF)

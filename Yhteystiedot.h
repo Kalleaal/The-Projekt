@@ -5,9 +5,8 @@
 class Yhteystiedot
 {
 	public:
-// konstruktori
-	Yhteystiedot(string n, string o, float p);
 	
+	Yhteystiedot(string n, string o, float p);
 	virtual void tulosta();
 
 	string nimi;

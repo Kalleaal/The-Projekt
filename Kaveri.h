@@ -2,7 +2,7 @@
 #include "Yhteystiedot.h"
 
 
-class Kaveri:Yhteystiedot
+class Kaveri:public Yhteystiedot
 {
 public:
 	Kaveri(string n, string o, float p, string k, int d);

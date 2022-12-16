@@ -1,9 +1,8 @@
 #include "Kaveri.h"
 
-Kaveri::Kaveri(string n, string o, float p, string k, int d)
-{
+Kaveri::Kaveri(string n, string o, float p, string k, int d) 
+: Yhteystiedot(n, o, p) {};
 
-}
 
 void Kaveri::tulosta()
 {
